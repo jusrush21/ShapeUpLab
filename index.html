@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Head -->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Title -->
+    <title>Shape-Up or Shape-Out</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- Styles CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<!-- Body -->
+<body>
+    <!-- Container -->
+    <div class="header-container">
+        <!-- Row 1 -->
+        <div class="row col-12 justify-content-center">
+            <h1 class="h1 text-center py-4">Shape-Up or Shape-Out</h1>
+        </div>
+        <!-- Row 2 -->
+        <div class="row col-12 justify-content-center mb-3">
+            <!-- Rectangle Form/Input -->
+            <form class="mx-2" action="#">
+                <div class="input-group input-group-sm">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">Rectangle</span>
+                    </div>
+                    <input id="rectangleLengthInput" class="form-control input-small" type="text" placeholder="Length" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                    <input id="rectangleWidthInput" class="form-control input-small" type="text" placeholder="Width" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                    <div class="input-group-append">
+                        <input id="insertRectangleButton" class="button btn btn-outline-secondary" type="submit" value="Insert" disabled>
+                    </div>
+                </div>
+            </form>
+            <!-- Square Form/Input -->
+            <form class="mx-2" action="#">
+                <div class="input-group input-group-sm">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">Square</span>
+                    </div>
+                    <input id="squareSideInput" class="form-control input-small" type="text" placeholder="Side" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                    <div class="input-group-append">
+                        <input id="insertSquareButton" class="button btn btn-outline-secondary" type="submit" value="Insert" disabled>
+                    </div>
+                </div>
+            </form>
+            <!-- Circle Form/Input -->
+            <form class="mx-2" action="#">
+                <div class="input-group input-group-sm">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">Circle</span>
+                    </div>
+                    <input id="circleRadiusInput" class="form-control" type="text" placeholder="Radius" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                    <div class="input-group-append">
+                        <input id="insertCircleButton" class="button btn btn-outline-secondary" type="submit" value="Insert" disabled>
+                    </div>
+                </div>
+            </form>
+            <!-- Triangle Form/Input -->
+            <form class="mx-2" action="#">
+                <div class="input-group input-group-sm">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">Triangle</span>
+                    </div>
+                    <input id="triangleHeightInput" class="form-control" type="text" placeholder="Height" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                    <div class="input-group-append">
+                        <input id="insertTriangleButton" class="button btn btn-outline-secondary" type="submit" value="Insert" disabled>
+                    </div>
+                </div>
+            </form>
+            <!-- Reset Button -->
+            <button id="resetButton" class="btn btn-sm btn-outline-secondary mx-2" disabled>Reset</button>
+        </div>
+        <!-- Row 3 -->
+        <div class="row col-12 justify-content-center mb-4">
+            <!-- Drawing Board -->
+            <div id="drawingBoard" class="card"></div>
+            <!-- Shape Information -->
+            <div id="shapeInformation" class="card">
+                <!-- Header -->
+                <div class="shape-information-header card-header bg-secondary">Shape</div>
+                <!-- Unordered List -->
+                <ul id="shapeInformationList" class="list-group list-group-flush">
+                    <!-- Name -->
+                    <li id="nameListItem" class="list-group-item">
+                        <span id="nameLabelSpan" class="shape-information-label ml-3">Name:</span> 
+                        <span id="nameValueSpan" class="shape-information-value ml-1"></span>
+                    </li>
+                    <!-- Height -->
+                    <li id="heightListItem" class="list-group-item">
+                        <span id="heightLabelSpan" class="shape-information-label ml-3">Height:</span>
+                        <span id="heightValueSpan" class="shape-information-value ml-1"></span>
+                    </li>
+                    <!-- Width -->
+                    <li id="widthListItem" class="list-group-item">
+                        <span id="widthLabelSpan" class="shape-information-label ml-3">Width:</span>
+                        <span id="widthValueSpan" class="shape-information-value ml-1"></span>
+                    </li>
+                    <!-- Area -->
+                    <li is="areaListItem" class="list-group-item">
+                        <span id="areaLabelSpan" class="shape-information-label ml-3">Area:</span>
+                        <span id="areaValueSpan" class="shape-information-value ml-1"></span>
+                    </li>
+                    <!-- Perimeter -->
+                    <li id="perimeterListItem" class="list-group-item">
+                        <span id="perimeterLabelSpan" class="shape-information-label ml-3">Perimeter:</span>
+                        <span id="perimeterValueSpan" class="shape-information-value ml-1"></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <!-- jQuery JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <!-- Scripts JS -->
+    <script src="scripts.js"></script>
+</body>
+</html>
